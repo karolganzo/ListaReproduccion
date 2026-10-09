@@ -1,0 +1,384 @@
+
+---- P01 - Operaciones sobre una lista vacía ----
+[OK]    Inicial: [] actual=null n=0
+        Operación: getTamanio()
+        Esperado:  0
+        Obtenido:  0
+[OK]    Inicial: [] actual=null n=0
+        Operación: getActual()
+        Esperado:  null
+        Obtenido:  null
+[OK]    Inicial: [] actual=null n=0
+        Operación: avanzar()
+        Esperado:  null
+        Obtenido:  null
+[OK]    Inicial: [] actual=null n=0
+        Operación: retroceder()
+        Esperado:  null
+        Obtenido:  null
+[OK]    Inicial: [] actual=null n=0
+        Operación: buscar(1)
+        Esperado:  null
+        Obtenido:  null
+[OK]    Inicial: [] actual=null n=0
+        Operación: seleccionar(1)
+        Esperado:  false
+        Obtenido:  false
+[OK]    Inicial: [] actual=null n=0
+        Operación: eliminarPorId(1)
+        Esperado:  null
+        Obtenido:  null
+[OK]    Inicial: [] actual=null n=0
+        Operación: eliminarActual()
+        Esperado:  null
+        Obtenido:  null
+[OK]    Inicial: [] actual=null n=0
+        Operación: reproducir(3)
+        Esperado:  0
+        Obtenido:  0
+[OK]    Inicial: [] actual=null n=0
+        Operación: recorrer adelante / atrás
+        Esperado:  [] / []
+        Obtenido:  [] / []
+[OK]    Inicial: [] actual=null n=0
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=0, enlaces consistentes
+        Obtenido:  tamaño=0, enlaces consistentes
+
+---- P02 - Inserción de la primera canción ----
+[OK]    Inicial: [] actual=null n=0
+        Operación: agregarAlFinal(A)
+        Esperado:  ID=1, actual=1
+        Obtenido:  ID=1, actual=1
+[OK]    Inicial: [1] actual=1 n=1
+        Operación: inicio y fin
+        Esperado:  1 y 1
+        Obtenido:  1 y 1
+[OK]    Inicial: [1] actual=1 n=1
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=1, enlaces consistentes
+        Obtenido:  tamaño=1, enlaces consistentes
+
+---- P03 - Navegación en ambos sentidos con un solo nodo ----
+[OK]    Inicial: [1] actual=1 n=1
+        Operación: avanzar()
+        Esperado:  1 (se apunta a sí mismo)
+        Obtenido:  1 (se apunta a sí mismo)
+[OK]    Inicial: [1] actual=1 n=1
+        Operación: retroceder()
+        Esperado:  1 (se apunta a sí mismo)
+        Obtenido:  1 (se apunta a sí mismo)
+[OK]    Inicial: [1] actual=1 n=1
+        Operación: avanzar() x3
+        Esperado:  1
+        Obtenido:  1
+[OK]    Inicial: [1] actual=1 n=1
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=1, enlaces consistentes
+        Obtenido:  tamaño=1, enlaces consistentes
+
+---- P04 - Inserciones al inicio y al final (la actual no cambia) ----
+[OK]    Inicial: [1] actual=1 n=1
+        Operación: agregarAlInicio(ID2)
+        Esperado:  [2 1] actual=1
+        Obtenido:  [2 1] actual=1
+[OK]    Inicial: [2 1] actual=1 n=2
+        Operación: agregarAlFinal(ID3)
+        Esperado:  [2 1 3] actual=1
+        Obtenido:  [2 1 3] actual=1
+[OK]    Inicial: [2 1 3] actual=1 n=3
+        Operación: agregarAlInicio(ID4)
+        Esperado:  [4 2 1 3] actual=1
+        Obtenido:  [4 2 1 3] actual=1
+[OK]    Inicial: [4 2 1 3] actual=1 n=4
+        Operación: inicio y fin
+        Esperado:  4 y 3
+        Obtenido:  4 y 3
+[OK]    Inicial: [4 2 1 3] actual=1 n=4
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=4, enlaces consistentes
+        Obtenido:  tamaño=4, enlaces consistentes
+
+---- P05 - Recorridos con cinco canciones ----
+[OK]    Inicial: [1 2 3 4 5] actual=1 n=5
+        Operación: recorrerAdelante()
+        Esperado:  [1 2 3 4 5]
+        Obtenido:  [1 2 3 4 5]
+[OK]    Inicial: [1 2 3 4 5] actual=1 n=5
+        Operación: recorrerAtras()
+        Esperado:  [5 4 3 2 1]
+        Obtenido:  [5 4 3 2 1]
+[OK]    Inicial: [1 2 3 4 5] actual=1 n=5
+        Operación: recorrido no modifica la lista
+        Esperado:  [1 2 3 4 5] actual=1 n=5
+        Obtenido:  [1 2 3 4 5] actual=1 n=5
+[OK]    Inicial: [1 2 3 4 5] actual=1 n=5
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=5, enlaces consistentes
+        Obtenido:  tamaño=5, enlaces consistentes
+
+---- P06 - Avance desde la última canción hacia la primera ----
+[OK]    Inicial: [1 2 3 4 5] actual=5 n=5
+        Operación: avanzar()
+        Esperado:  1
+        Obtenido:  1
+[OK]    Inicial: [1 2 3 4 5] actual=1 n=5
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=5, enlaces consistentes
+        Obtenido:  tamaño=5, enlaces consistentes
+
+---- P07 - Retroceso desde la primera canción hacia la última ----
+[OK]    Inicial: [1 2 3 4 5] actual=1 n=5
+        Operación: retroceder()
+        Esperado:  5
+        Obtenido:  5
+[OK]    Inicial: [1 2 3 4 5] actual=5 n=5
+        Operación: avanzar() x5 (vuelta completa)
+        Esperado:  5
+        Obtenido:  5
+[OK]    Inicial: [1 2 3 4 5] actual=5 n=5
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=5, enlaces consistentes
+        Obtenido:  tamaño=5, enlaces consistentes
+
+---- P08 - Eliminación del primer nodo ----
+[OK]    Inicial: [1 2 3 4 5] actual=3 n=5
+        Operación: eliminarPorId(1)
+        Esperado:  eliminada=1 [2 3 4 5] actual=3
+        Obtenido:  eliminada=1 [2 3 4 5] actual=3
+[OK]    Inicial: [2 3 4 5] actual=3 n=4
+        Operación: nuevo inicio / fin.siguiente
+        Esperado:  2 / 2
+        Obtenido:  2 / 2
+[OK]    Inicial: [2 3 4 5] actual=3 n=4
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=4, enlaces consistentes
+        Obtenido:  tamaño=4, enlaces consistentes
+
+---- P09 - Eliminación del último nodo ----
+[OK]    Inicial: [1 2 3 4 5] actual=3 n=5
+        Operación: eliminarPorId(5)
+        Esperado:  eliminada=5 [1 2 3 4] actual=3
+        Obtenido:  eliminada=5 [1 2 3 4] actual=3
+[OK]    Inicial: [1 2 3 4] actual=3 n=4
+        Operación: nuevo fin / inicio.anterior
+        Esperado:  4 / 4
+        Obtenido:  4 / 4
+[OK]    Inicial: [1 2 3 4] actual=3 n=4
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=4, enlaces consistentes
+        Obtenido:  tamaño=4, enlaces consistentes
+
+---- P10 - Eliminación de un nodo intermedio (distinto de la actual) ----
+[OK]    Inicial: [1 2 3 4 5] actual=4 n=5
+        Operación: eliminarPorId(3)
+        Esperado:  eliminada=3 [1 2 4 5] actual=4
+        Obtenido:  eliminada=3 [1 2 4 5] actual=4
+[OK]    Inicial: [1 2 4 5] actual=4 n=4
+        Operación: recorrerAtras()
+        Esperado:  [5 4 2 1]
+        Obtenido:  [5 4 2 1]
+[OK]    Inicial: [1 2 4 5] actual=4 n=4
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=4, enlaces consistentes
+        Obtenido:  tamaño=4, enlaces consistentes
+
+---- P11 - Eliminación de la canción actual ----
+[OK]    Inicial: [1 2 3 4 5] actual=3 n=5
+        Operación: eliminarActual() (intermedia)
+        Esperado:  eliminada=3 [1 2 4 5] actual=4
+        Obtenido:  eliminada=3 [1 2 4 5] actual=4
+[OK]    Inicial: [1 2 4 5] actual=4 n=4
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=4, enlaces consistentes
+        Obtenido:  tamaño=4, enlaces consistentes
+[OK]    Inicial: [1 2 4 5] actual=5 n=4
+        Operación: eliminarActual() (era la última)
+        Esperado:  eliminada=5 [1 2 4] actual=1 fin=4
+        Obtenido:  eliminada=5 [1 2 4] actual=1 fin=4
+[OK]    Inicial: [1 2 4] actual=1 n=3
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=3, enlaces consistentes
+        Obtenido:  tamaño=3, enlaces consistentes
+[OK]    Inicial: [1 2 4] actual=1 n=3
+        Operación: eliminarActual() (era la primera)
+        Esperado:  eliminada=1 [2 4] actual=2 inicio=2
+        Obtenido:  eliminada=1 [2 4] actual=2 inicio=2
+[OK]    Inicial: [2 4] actual=2 n=2
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=2, enlaces consistentes
+        Obtenido:  tamaño=2, enlaces consistentes
+
+---- P12 - Eliminación de la única canción ----
+[OK]    Inicial: [1] actual=1 n=1
+        Operación: eliminarActual()
+        Esperado:  eliminada=1, inicio/fin/actual=null
+        Obtenido:  eliminada=1, inicio/fin/actual=null
+[OK]    Inicial: [] actual=null n=0
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=0, enlaces consistentes
+        Obtenido:  tamaño=0, enlaces consistentes
+[OK]    Inicial: [2] actual=2 n=1
+        Operación: eliminarPorId(2) (única)
+        Esperado:  eliminada=2 []
+        Obtenido:  eliminada=2 []
+[OK]    Inicial: [] actual=null n=0
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=0, enlaces consistentes
+        Obtenido:  tamaño=0, enlaces consistentes
+
+---- P13 - Búsqueda y eliminación de un ID inexistente ----
+[OK]    Inicial: [1 2 3 4 5] actual=2 n=5
+        Operación: buscar(99)
+        Esperado:  null
+        Obtenido:  null
+[OK]    Inicial: [1 2 3 4 5] actual=2 n=5
+        Operación: eliminarPorId(99)
+        Esperado:  null
+        Obtenido:  null
+[OK]    Inicial: [1 2 3 4 5] actual=2 n=5
+        Operación: seleccionar(99)
+        Esperado:  false
+        Obtenido:  false
+[OK]    Inicial: [1 2 3 4 5] actual=2 n=5
+        Operación: estado tras las operaciones
+        Esperado:  [1 2 3 4 5] actual=2 n=5
+        Obtenido:  [1 2 3 4 5] actual=2 n=5
+[OK]    Inicial: [1 2 3 4 5] actual=2 n=5
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=5, enlaces consistentes
+        Obtenido:  tamaño=5, enlaces consistentes
+
+---- P14 - Reproducción simulada con k mayor que la cantidad de canciones ----
+[OK]    Inicial: [1 2 3] actual=1 n=3
+        Operación: reproducir(7)
+        Esperado:  1 2 3 1 2 3 1 (7)
+        Obtenido:  1 2 3 1 2 3 1 (7)
+[OK]    Inicial: [1 2 3] actual=2 n=3
+        Operación: actual al terminar
+        Esperado:  2
+        Obtenido:  2
+[OK]    Inicial: [1 2 3] actual=2 n=3
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=3, enlaces consistentes
+        Obtenido:  tamaño=3, enlaces consistentes
+
+---- P15 - Seleccionar por ID ----
+[OK]    Inicial: [1 2 3 4 5] actual=1 n=5
+        Operación: seleccionar(4)
+        Esperado:  true actual=4
+        Obtenido:  true actual=4
+[OK]    Inicial: [1 2 3 4 5] actual=4 n=5
+        Operación: buscar(2) no cambia la actual
+        Esperado:  2 actual=4
+        Obtenido:  2 actual=4
+[OK]    Inicial: [1 2 3 4 5] actual=4 n=5
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=5, enlaces consistentes
+        Obtenido:  tamaño=5, enlaces consistentes
+
+---- P16 - Entradas inválidas en la lista (no la modifican) ----
+[OK]    Inicial: [1 2] actual=1 n=2
+        Operación: agregarAlFinal(duración=0)
+        Esperado:  excepción
+        Obtenido:  excepción
+[OK]    Inicial: [1 2] actual=1 n=2
+        Operación: agregarAlInicio(duración=-5)
+        Esperado:  excepción
+        Obtenido:  excepción
+[OK]    Inicial: [1 2] actual=1 n=2
+        Operación: agregarAlFinal(título vacío)
+        Esperado:  excepción
+        Obtenido:  excepción
+[OK]    Inicial: [1 2] actual=1 n=2
+        Operación: agregarAlFinal(artista null)
+        Esperado:  excepción
+        Obtenido:  excepción
+[OK]    Inicial: [1 2] actual=1 n=2
+        Operación: reproducir(0)
+        Esperado:  excepción
+        Obtenido:  excepción
+[OK]    Inicial: [1 2] actual=1 n=2
+        Operación: reproducir(-2)
+        Esperado:  excepción
+        Obtenido:  excepción
+[OK]    Inicial: [1 2] actual=1 n=2
+        Operación: estado tras entradas inválidas
+        Esperado:  [1 2] actual=1 n=2
+        Obtenido:  [1 2] actual=1 n=2
+[OK]    Inicial: [1 2] actual=1 n=2
+        Operación: siguiente inserción válida
+        Esperado:  ID=3 (no se consumieron IDs)
+        Obtenido:  ID=3 (no se consumieron IDs)
+[OK]    Inicial: [1 2 3] actual=1 n=3
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=3, enlaces consistentes
+        Obtenido:  tamaño=3, enlaces consistentes
+
+---- P17 - Entradas inválidas en el menú (simulación de teclado) ----
+[OK]    Inicial: -
+        Operación: interpretarEntero("abc")
+        Esperado:  null
+        Obtenido:  null
+[OK]    Inicial: -
+        Operación: interpretarEntero(" 12 ")
+        Esperado:  12
+        Obtenido:  12
+[OK]    Inicial: -
+        Operación: interpretarEntero("3.5")
+        Esperado:  null
+        Obtenido:  null
+[OK]    Inicial: lista vacía
+        Operación: opción "abc"
+        Esperado:  mensaje de entero inválido
+        Obtenido:  mensaje de entero inválido
+[OK]    Inicial: lista vacía
+        Operación: opción 99
+        Esperado:  mensaje de opción inválida
+        Obtenido:  mensaje de opción inválida
+[OK]    Inicial: lista vacía
+        Operación: opciones 7, 6, 12
+        Esperado:  aviso de lista vacía
+        Obtenido:  aviso de lista vacía
+[OK]    Inicial: lista vacía
+        Operación: título vacío
+        Esperado:  mensaje de texto vacío
+        Obtenido:  mensaje de texto vacío
+[OK]    Inicial: lista vacía
+        Operación: duración -4 y 0
+        Esperado:  mensaje de número > 0
+        Obtenido:  mensaje de número > 0
+[OK]    Inicial: [1]
+        Operación: buscar ID 55
+        Esperado:  aviso de ID inexistente
+        Obtenido:  aviso de ID inexistente
+[OK]    Inicial: [1]
+        Operación: reproducir k=3
+        Esperado:  3 reproducciones
+        Obtenido:  3 reproducciones
+[OK]    Inicial: [1]
+        Operación: consultar cantidad
+        Esperado:  Cantidad de canciones: 1
+        Obtenido:  Cantidad de canciones: 1
+[OK]    Inicial: -
+        Operación: salir (opción 13)
+        Esperado:  termina sin errores
+        Obtenido:  termina sin errores
+[OK]    Inicial: lista vacía
+        Operación: fin de entrada inesperado
+        Esperado:  termina sin errores
+        Obtenido:  termina sin errores
+
+---- P18 - IDs únicos e incrementales (no se reutilizan tras eliminar) ----
+[OK]    Inicial: [1 2] actual=1 n=2
+        Operación: agregarAlFinal tras eliminar ID 3
+        Esperado:  ID=4
+        Obtenido:  ID=4
+[OK]    Inicial: [1 2 4] actual=1 n=3
+        Operación: verificar tamaño y enlaces
+        Esperado:  tamaño=3, enlaces consistentes
+        Obtenido:  tamaño=3, enlaces consistentes
+
+==============================================
+Comprobaciones: 86  Correctas: 86  Fallidas: 0
+TODAS LAS PRUEBAS PASARON
